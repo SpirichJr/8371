@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="Homework.xsl"?>
+<!DOCTYPE body [
+        <!ELEMENT body (news_feed,subscription,playlist*,composition*)>
+        <!ELEMENT news_feed (news*,concerts*,activity*,feedback*)>
+        <!ELEMENT news (#PCDATA)>
+        <!ELEMENT concerts (#PCDATA)>
+        <!ELEMENT activity (#PCDATA)>
+        <!ELEMENT feedback (#PCDATA)>
+        <!ELEMENT subscription (type,duration,end_date)>
+        <!ELEMENT type (subscription_name,cost,option*)>
+        <!ELEMENT subscription_name (#PCDATA)>
+        <!ELEMENT cost (#PCDATA)>
+        <!ELEMENT option (#PCDATA)>
+        <!ELEMENT duration (#PCDATA)>
+        <!ELEMENT end_date (#PCDATA)>
+        <!ELEMENT playlist (playlist_name,playlist_id,composition_id*)>
+        <!ELEMENT playlist_name (#PCDATA)>
+        <!ELEMENT playlist_id (#PCDATA)>
+        <!ELEMENT composition_id (#PCDATA)>
+        <!ATTLIST playlist_id number CDATA #REQUIRED>
+        <!ATTLIST composition_id number CDATA #REQUIRED >
+        <!ELEMENT composition (composition_name,singer,genre+,composition_id)>
+        <!ELEMENT composition_name (#PCDATA)>
+        <!ELEMENT singer (#PCDATA)>
+        <!ELEMENT genre (#PCDATA)>
+        ]>
+<body>
+    <news_feed>
+        <news>Новый альбом Майкла Джексона</news>
+        <news>Митя Фомин арестован за контробанду оружия в Демократической Республике Конго</news>
+        <concerts>Группа QUEEN в СК"Олимпийский" 30.02.2021 </concerts>
+        <concerts>Егор Крид ВДНХ 20.07.2020</concerts>
+        <activity>Фестиваль народной музыки жителей Преднестровья 15.06.2020-15.07.2020</activity>
+        <activity>VK Fest Miami c 26.06-30.06 2020 </activity>
+        <feedback>Вышло новое обновление 1.3</feedback>
+        <feedback>Исправлена ошибка при добавлении песни</feedback>
+        <feedback>Добавлен эквалайзер</feedback>
+    </news_feed>
+    <subscription>
+        <type>
+            <subscription_name>Базовая</subscription_name>
+            <cost>150</cost>
+            <option>Отключение рекламы</option>
+            <option>Фоновое воспроизведение</option>
+            <option>Увеличено облачное хранилище</option>
+        </type>
+        <duration>1 месяц</duration>
+        <end_date>06.06.2020 23:44</end_date>
+    </subscription>
+    <playlist>
+        <playlist_name>My Favourite</playlist_name>
+        <playlist_id number="1"></playlist_id>
+        <composition_id number="1"></composition_id>
+        <composition_id number="2"></composition_id>
+        <composition_id number="3"></composition_id>
+        <composition_id number="4"></composition_id>
+        <composition_id number="5"></composition_id>
+    </playlist>
+    <playlist>
+        <playlist_name>For Run</playlist_name>
+        <playlist_id number="2"></playlist_id>
+        <composition_id number="6"></composition_id>
+        <composition_id number="7"></composition_id>
+        <composition_id number="8"></composition_id>
+        <composition_id number="1"></composition_id>
+    </playlist>
+    <composition>
+        <composition_name>Wake Me Up</composition_name>
+        <singer>Avicii feat Aloe Blacc</singer>
+        <genre>Танцевальная</genre>
+        <composition_id number="1"></composition_id>
+    </composition>
+    <composition>
+        <composition_name>Hypnodancer</composition_name>
+        <singer>Little Big</singer>
+        <genre>Танцевальная</genre>
+        <composition_id number="2"></composition_id>
+    </composition>
+    <composition>
+        <composition_name>Omen</composition_name>
+        <singer>The Prodigy</singer>
+        <genre>Танцевальная</genre>
+        <composition_id number="3"></composition_id>
+    </composition>
+    <composition>
+        <composition_name>Не От Мира Сего</composition_name>
+        <singer>Oxxxymiron</singer>
+        <genre>Хип-хоп</genre>
+        <composition_id number="4"></composition_id>
+    </composition>
+    <composition>
+        <composition_name>Por una Cabeza</composition_name>
+        <singer>Carlos Gardel</singer>
+        <genre>Классичсекая</genre>
+        <composition_id number="5"></composition_id>
+    </composition>
+    <composition>
+        <composition_name>The Final Countdown</composition_name>
+        <singer>Europe</singer>
+        <genre>Рок</genre>
+        <composition_id number="6"></composition_id>
+    </composition>
+    <composition>
+        <composition_name>Позови Меня С Собой</composition_name>
+        <singer>Алла Пугачева</singer>
+        <genre>Поп</genre>
+        <composition_id number="7"></composition_id>
+    </composition>
+    <composition>
+        <composition_name>Буратино:"Давным Давно"</composition_name>
+        <singer>Николай Литвинов</singer>
+        <genre>Детская</genre>
+        <composition_id number="8"></composition_id>
+    </composition>
+</body>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    <xs:element name="body">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="news_feed">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="news" type="xs:string" maxOccurs="unbounded"></xs:element>
+                            <xs:element name="concerts" type="xs:string" maxOccurs="unbounded"></xs:element>
+                            <xs:element name="activity" type="xs:string" maxOccurs="unbounded"></xs:element>
+                            <xs:element name="feedback" type="xs:string" maxOccurs="unbounded"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="subscription">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="type">
+                                <xs:complexType>
+                                    <xs:sequence>
+                                        <xs:element name="subscription_name" type="xs:string"></xs:element>
+                                        <xs:element name="cost" type="xs:integer"></xs:element>
+                                        <xs:element name="option" type="xs:string"></xs:element>
+                                    </xs:sequence>
+                                </xs:complexType>
+                            </xs:element>
+                            <xs:element name="duration" type="xs:duration"></xs:element>
+                            <xs:element name="end_date" type="xs:dateTime"></xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="playlist" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="playlist_name">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="1"></xs:minLength>
+                                        <xs:maxLength value="16"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        <xs:element name="playlist_id">
+                            <xs:complexType>
+                                <xs:attribute name="number" type="xs:ID" use="required"></xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                        <xs:element name="composition_id" maxOccurs="unbounded">
+                            <xs:complexType>
+                                <xs:attribute name="number" type="xs:ID" use="required"></xs:attribute>
+                            </xs:complexType>
+                        </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <xs:element name="composition" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="composition_name">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="1"></xs:minLength>
+                                        <xs:maxLength value="16"></xs:maxLength>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="singer" type="xs:string"></xs:element>
+                            <xs:element name="genre" type="xs:string" maxOccurs="3"></xs:element>
+                            <xs:element name="composition_id">
+                                <xs:complexType>
+                                    <xs:attribute name="number" type="xs:ID" use="required"></xs:attribute>
+                                </xs:complexType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+
+    </xs:element>
+    
+</xs:schema>
